@@ -9088,46 +9088,102 @@ label.panel-block:hover {
   padding: 3rem 1.5rem 6rem;
 }
 
-html, body, #app {
-  overflow: hidden;
-}
-
 #app {
   display: flex;
   flex-direction: column;
 }
 
 #app .title.is-1 {
-  font-family: "Ranga", cursive !important;
+  font-family: "Courgette", cursive !important;
+  font-weight: 100 !important;
+  text-transform: capitalize !important;
+  color: white;
 }
 
 [v-cloak], [sr-only] {
   display: none;
 }
 
-.brand {
-  animation: brandanimation 600ms ease alternate infinite;
+.is-clickable {
+  user-select: none;
+  cursor: pointer;
 }
 
-@keyframes brandanimation {
-  0% {
-    text-shadow: 0px 0px transparent, 2px 2px #df2020, 4px 4px #b9df20, 6px 6px #20df6c, 8px 8px #206cdf, 10px 10px #b920df, 12px 12px #df2020;
+.with-padding {
+  padding: 1rem 0rem;
+}
+
+.is-footered {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+@media screen and (min-width: 769px), print {
+  .is-footered {
+    align-items: center;
   }
-  20% {
-    text-shadow: 0px 0px transparent, 2px 2px #df2020, 4px 4px #df2020, 6px 6px #b9df20, 8px 8px #20df6c, 10px 10px #206cdf, 12px 12px #b920df;
+}
+@media screen and (max-width: 768px) {
+  .is-footered {
+    align-items: flex-start;
+    padding-left: 2rem;
   }
-  40% {
-    text-shadow: 0px 0px transparent, 2px 2px #b920df, 4px 4px #df2020, 6px 6px #df2020, 8px 8px #b9df20, 10px 10px #20df6c, 12px 12px #206cdf;
+}
+.container.with-boxes {
+  min-height: 100vh;
+  padding: 2rem 0rem;
+}
+
+@media screen and (min-width: 769px), print {
+  .is-sticky {
+    position: sticky;
+    top: 0;
   }
-  60% {
-    text-shadow: 0px 0px transparent, 2px 2px #206cdf, 4px 4px #b920df, 6px 6px #df2020, 8px 8px #df2020, 10px 10px #b9df20, 12px 12px #20df6c;
-  }
-  80% {
-    text-shadow: 0px 0px transparent, 2px 2px #20df6c, 4px 4px #206cdf, 6px 6px #b920df, 8px 8px #df2020, 10px 10px #df2020, 12px 12px #b9df20;
-  }
-  100% {
-    text-shadow: 0px 0px transparent, 2px 2px #b9df20, 4px 4px #20df6c, 6px 6px #206cdf, 8px 8px #b920df, 10px 10px #df2020, 12px 12px #df2020;
-  }
+}
+header {
+  background-color: #0a0a0a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
+  z-index: 10000000000;
+}
+
+footer {
+  padding: 2rem 0rem 8rem 0rem;
+}
+
+.has-background-red {
+  background: #ff3860;
+}
+
+.has-background-orange {
+  background: #ff470f;
+}
+
+.has-background-yellow {
+  background: #ffdd57;
+}
+
+.has-background-green {
+  background: #23d160;
+}
+
+.has-background-turquoise {
+  background: #00d1b2;
+}
+
+.has-background-cyan {
+  background: #209cee;
+}
+
+.has-background-blue {
+  background: #3273dc;
+}
+
+.has-background-purple {
+  background: #b86bff;
 }
 
 /*# sourceMappingURL=style.css.map */

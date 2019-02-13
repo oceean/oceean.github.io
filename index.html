@@ -2,31 +2,148 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Hello World</title>
+    <title>Oceean</title>
+    <meta name="author" content="Oceean">
+    <meta name="description" content="Oceean devolopers and designers team">
+    <meta name="document-state" content="Dynamic">
+    <meta name="robots" content="index,follow">
+    <meta name="robots" content="all">
+    <meta name="theme-color" content="#000000">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="shortcut icon" href="/icon.144.png">
+    <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/buefy/dist/buefy.min.css">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Ranga" rel="stylesheet">
 </head>
 <body>
 
-    <main id="app" class="has-background-black">
-        <header class="container">
-            <h1 class="title is-1 has-text-light brand">Oceean.store</h1>
+    <main id="app" class="has-background-black-bis">
+        <header class="with-padding is-sticky">
+            <h1 @click="goTop()" class="title is-1 is-clickable">Oceean</h1>
         </header>
-        <nav class="container"></nav>
-        <section class="container">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto perspiciatis reprehenderit molestias vitae placeat! Minima aspernatur, est iure a quis suscipit ratione laboriosam. Obcaecati corporis quia, totam consequatur eligendi porro!
+        <section class="container with-boxes">
+            <div class="columns">
+                <div class="column is-3">
+                    <article class="box has-background-red">
+                        <h2 class="title is-2 has-text-white">Article</h2>
+                        <p class="has-text-white"></p>
+                    </article>
+                </div>
+                <div class="column is-3">
+                    <article class="box has-background-turquoise">
+                        <h2 class="title is-2 has-text-white">Alert</h2>
+                        <p class="has-text-white"></p>
+                    </article>
+                </div>
+                <div class="column is-4">
+                    <div class="box has-background-black-ter">
+                        <h2 class="title is-2 has-text-white">Stack</h2>
+                        <p class="has-text-white"></p>
+                    </div>
+                </div>
+                <div class="column is-2">
+                    <article class="box has-background-blue">
+                        <h2 class="title is-2 has-text-white">Thick Marcker</h2>
+                        <div class="level">
+                            <div class="level-item">
+                                <div class="level-item">
+                                    <a
+                                        href="http://thickmarker.oceean.store"
+                                        class="button is-small is-rounded is-light is-outlined">
+                                        test
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="level-item">
+                                <div class="level-item">
+                                    <a
+                                        href="https://github.com/oceean/ThickMarker"
+                                        class="button is-small is-rounded is-light is-outlined">
+                                        code
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="box has-background-blue">
+                        <h2 class="title is-2 has-text-white">Sticker Column</h2>
+                        <div class="level">
+                            <div class="level-item">
+                                <div class="level-item">
+                                    <a
+                                        href="http://oceean.store/StickersColumns/"
+                                        class="button is-small is-rounded is-light is-outlined">
+                                        test
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="level-item">
+                                <div class="level-item">
+                                    <a
+                                        href="https://github.com/oceean/StickersColumns"
+                                        class="button is-small is-rounded is-light is-outlined">
+                                        code
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
         </section>
-        
+        <footer class="has-background-black">
+                <div class="columns">
+                    <div class="column is-footered">
+                        <div>
+                            <h4 class="title is-4 has-text-white">Join</h4>
+                            <ul>
+                                <li><a href="https://github.com/oceean" class="has-text-grey">Github</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column is-footered">
+                        <div>
+                            <h4 class="title is-4 has-text-white">Freelance</h4>
+                            <ul>
+                                <li><a class="has-text-grey" href="">Upwork</a></li>
+                                <li><a class="has-text-grey" href="">Freelansim</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column is-footered">
+                        <div>
+                            <h4 class="title is-4 has-text-white">Contacts</h4>
+                            <ul>
+                                <li>
+                                    <b-tooltip label="@oceean_dev"
+                                        position="is-right"
+                                        type="is-dark">
+                                        <a href="tg://resolve?domain=oceean_dev" class="has-text-grey">Telegram</a>
+                                    </b-tooltip>
+                                </li>
+                                <li><a class="has-text-grey" href="mailto:billionspoint@gmail.com">Email</a></li>
+                                <li><a class="has-text-grey" href="tel:+79771326478">Telephone</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column is-footered">
+                        <div>
+                            <ul>
+                                <li class="has-text-white"><b>Copyright</b></li>
+                                <li class="has-text-white"><b>Nikolay Oceean</b></li>
+                                <li class="has-text-white"><b>Since 2019</b></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        </footer>
     </main>
 
     <script type="text/javascript" src="https://unpkg.com/vue"></script>
-    <script type="text/javascript" src="https://unpkg.com/buefy/dist/components/switch"></script>
-    <script type="text/javascript" src="https://unpkg.com/buefy/dist/components/dropdown"></script>
     <script type="text/javascript" src="https://unpkg.com/buefy/dist/components/tooltip"></script>
-    <script type="text/javascript" src="https://unpkg.com/buefy/dist/components/toast"></script>
-    <!-- <script type="text/javascript" src="https://unpkg.com/buefy/dist/components/snackbar"></script> -->
     <script type="text/javascript" src="app.js"></script>
 </body>
 </html>
