@@ -14,6 +14,14 @@
     <meta name="theme-color" content="#000000">
     <link rel="manifest" href="/manifest.json">
     <link rel="shortcut icon" href="/icon.144.png">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134443058-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-134443058-1');
+    </script>
     <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/buefy/dist/buefy.min.css">
     <link rel="stylesheet" href="style.css">
@@ -45,48 +53,17 @@
                     </div>
                 </div>
                 <div class="column is-2">
-                    <article class="box has-background-blue">
-                        <h2 class="title is-2 has-text-white">Thick Marcker</h2>
+                    <article class="box has-background-blue" v-for="project in projects">
+                        <h2 class="title is-2 has-text-white">{{project.name}}</h2>
                         <div class="level">
                             <div class="level-item">
                                 <div class="level-item">
-                                    <a
-                                        href="http://thickmarker.oceean.store"
-                                        class="button is-small is-rounded is-light is-outlined">
-                                        test
-                                    </a>
+                                    <a :href="project.run" class="button is-small is-rounded is-light is-outlined">test</a>
                                 </div>
                             </div>
                             <div class="level-item">
                                 <div class="level-item">
-                                    <a
-                                        href="https://github.com/oceean/ThickMarker"
-                                        class="button is-small is-rounded is-light is-outlined">
-                                        code
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="box has-background-blue">
-                        <h2 class="title is-2 has-text-white">Sticker Column</h2>
-                        <div class="level">
-                            <div class="level-item">
-                                <div class="level-item">
-                                    <a
-                                        href="http://oceean.store/StickersColumns/"
-                                        class="button is-small is-rounded is-light is-outlined">
-                                        test
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="level-item">
-                                <div class="level-item">
-                                    <a
-                                        href="https://github.com/oceean/StickersColumns"
-                                        class="button is-small is-rounded is-light is-outlined">
-                                        code
-                                    </a>
+                                    <a :href="project.get" class="button is-small is-rounded is-light is-outlined">code</a>
                                 </div>
                             </div>
                         </div>
