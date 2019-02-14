@@ -58,12 +58,12 @@
                         <div class="level">
                             <div class="level-item">
                                 <div class="level-item">
-                                    <a :href="project.run" class="button is-small is-rounded is-light is-outlined">test</a>
+                                    <a @click="GSend(project.stats.run)" :href="project.run" class="button is-small is-rounded is-light is-outlined">test</a>
                                 </div>
                             </div>
                             <div class="level-item">
                                 <div class="level-item">
-                                    <a :href="project.get" class="button is-small is-rounded is-light is-outlined">code</a>
+                                    <a @click="GSend(project.stats.get)" :href="project.get" class="button is-small is-rounded is-light is-outlined">code</a>
                                 </div>
                             </div>
                         </div>
