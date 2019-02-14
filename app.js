@@ -1,17 +1,16 @@
-function genGStats(text) {
+function GS(catg, action, text) {
     return {
-        run: {
-            hitType: 'event',
-            eventCategory: 'Attn',
-            eventAction: 'test',
-            eventLabel: text
-        },
-        get: {
-            hitType: 'event',
-            eventCategory: 'Attn',
-            eventAction: 'code',
-            eventLabel: text
-        }
+        hitType: 'event',
+        eventCategory: catg,
+        eventAction: action,
+        eventLabel: text
+    }
+}
+
+function genGStatsAttn(text) {
+    return {
+        run: GS("ProjectView", "test", text),
+        get: GS("ProjectView", "code", text)
     }
 }
 
@@ -23,13 +22,13 @@ let app = new Vue({
                 name: "Thick Marker",
                 run: "https://thickmarker.oceean.store",
                 get: "https://github.com/oceean/ThickMarker",
-                stats: genGStats("ThickMarker")
+                stats: genGStatsAttn("ThickMarker")
             },
             {
                 name: "Sticker Columns",
                 run: "https://stickerscolumns.oceean.store",
                 get: "https://github.com/oceean/StickersColumns",
-                stats: genGStats("StickersColumns")
+                stats: genGStatsAttn("StickersColumns")
             }
         ]
     },
