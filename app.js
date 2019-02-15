@@ -3,9 +3,8 @@ function getLink(link, callback, errorcallback) {
     linker.open("GET", link, true);
     linker.timeout = 6000;
     linker.onload = ()=>{
-        if (callback) {
+        if (callback)
             callback(linker.responseText);
-        }
     };
     linker.onerror = errorcallback || (()=>{});
     linker.send();
@@ -47,10 +46,10 @@ let app = new Vue({
             }
         },
         lorem: function (l) {
-            let lorem = ""
-            for (let i = 0; i < l; i++) {
-                lorem += "loa ding "
-            }
+            let lorem = "";
+            l += (Math.round(Math.random() * 3) - 1);
+            for (let i = 0; i < l; i++)
+                lorem += "ldng ";
             return lorem
         }
     }
