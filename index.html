@@ -24,46 +24,45 @@
     </script>
     <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/buefy/dist/buefy.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <main id="app" class="has-background-black-bis">
-        <header class="with-padding is-sticky">
-            <h1 @click="goTop()" class="title is-1 is-clickable">Oceean</h1>
+        <header @click="showLogo = !showLogo" class="with-padding is-sticky">
+            <figure v-cloak v-if="showLogo" class="image is-64x64">
+                <img src="/icon.svg" alt="">
+            </figure>
+            <h1 v-if="!showLogo" class="title is-1 is-clickable">Oceean</h1>
         </header>
-        <section class="container with-boxes">
+        <section v-cloak class="container with-boxes">
             <div class="columns">
-                <div class="column is-3">
-                    <article class="box has-background-red">
-                        <h2 class="title is-3 has-text-white">Article</h2>
-                        <p class="has-text-white"></p>
-                    </article>
-                </div>
-                <div class="column is-3">
-                    <article class="box has-background-turquoise">
-                        <h2 class="title is-3 has-text-white">Alert</h2>
-                        <p class="has-text-white"></p>
-                    </article>
-                </div>
-                <div class="column is-4">
-                    <div class="box has-background-black-ter">
-                        <h2 class="title is-3 has-text-white">Stack</h2>
-                        <p class="has-text-white"></p>
+                <div class="column" :class="'is-'+column.size" v-for="column, columnTitle in columns">
+                    <div :class="'is-'+column.size+'-loader'">
+                        <article class="box has-loader" :class="'has-background-'+column.color" v-if="loading[columnTitle]">
+                            <h2 class="title is-3 has-text-white">
+                                <span class="filler">{{lorem(1)}}</span>
+                            </h2>
+                            <p class="has-text-white">
+                                <span class="filler">{{lorem(5*column.size)}}</span>
+                            </p>
+                            <b-loading :is-full-page="false" :active.sync="loading[columnTitle]" :can-cancel="false"></b-loading>
+                        </article>
                     </div>
-                </div>
-                <div class="column is-2">
-                    <article class="box has-background-blue" v-for="project in projects">
-                        <h2 class="title is-3 has-text-white">{{project.name}}</h2>
-                        <div class="level">
-                            <div class="level-item">
+                    <article class="box" :class="'has-background-'+column.color" v-for="columnData in column.data">
+                        <h2 class="title is-3 has-text-white">{{columnData.name}}</h2>
+                        <p v-if="columnData.desc" class="has-text-white">{{columnData.desc}}</p>
+                        <br v-if="columnData.desc">
+                        <div v-if="columnData.run && columnData.get" class="level">
+                            <div class="level-left">
                                 <div class="level-item">
-                                    <a @click="GSend(project.stats.run)" :href="project.run" class="button is-small is-rounded is-light is-outlined">test</a>
+                                    <a @click="GSend(columnData.stats.run)" :href="columnData.run" class="button is-small is-rounded is-light is-outlined">{{columnData.cost>0 ? `Buy ${columnData.cost}$` : 'Launch'}}</a>
                                 </div>
                             </div>
-                            <div class="level-item">
+                            <div class="level-right">
                                 <div class="level-item">
-                                    <a @click="GSend(project.stats.get)" :href="project.get" class="button is-small is-rounded is-light is-outlined">code</a>
+                                    <a @click="GSend(columnData.stats.get)" :href="columnData.get" class="button is-small is-rounded is-light is-outlined">Code</a>
                                 </div>
                             </div>
                         </div>
@@ -71,56 +70,56 @@
                 </div>
             </div>
         </section>
-        <footer class="has-background-black">
-                <div class="columns">
-                    <div class="column is-footered">
-                        <div>
-                            <h4 class="title is-4 has-text-white">Join</h4>
-                            <ul>
-                                <li><a href="https://github.com/oceean" class="has-text-grey">Github</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="column is-footered">
-                        <div>
-                            <h4 class="title is-4 has-text-white">Freelance</h4>
-                            <ul>
-                                <li><a class="has-text-grey" href="">Upwork</a></li>
-                                <li><a class="has-text-grey" href="">Freelansim</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="column is-footered">
-                        <div>
-                            <h4 class="title is-4 has-text-white">Contacts</h4>
-                            <ul>
-                                <li>
-                                    <b-tooltip label="@oceean_dev"
-                                        position="is-right"
-                                        type="is-dark">
-                                        <a href="tg://resolve?domain=oceean_dev" class="has-text-grey">Telegram</a>
-                                    </b-tooltip>
-                                </li>
-                                <li><a class="has-text-grey" href="mailto:billionspoint@gmail.com">Email</a></li>
-                                <li><a class="has-text-grey" href="tel:+79771326478">Telephone</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="column is-footered">
-                        <div>
-                            <ul>
-                                <li class="has-text-white"><b>Copyright</b></li>
-                                <li class="has-text-white"><b>Nikolay Oceean</b></li>
-                                <li class="has-text-white"><b>Since 2019</b></li>
-                            </ul>
-                        </div>
+        <footer class="has-background-black-ter">
+            <div class="columns">
+                <div class="column is-footered">
+                    <div>
+                        <h4 class="title is-4 has-text-white">Join</h4>
+                        <ul>
+                            <li><a href="https://github.com/oceean" class="has-text-grey">Github</a></li>
+                        </ul>
                     </div>
                 </div>
+                <div class="column is-footered">
+                    <div>
+                        <h4 class="title is-4 has-text-white">Freelance</h4>
+                        <ul>
+                            <li><a class="has-text-grey" href="">Upwork</a></li>
+                            <li><a class="has-text-grey" href="">Freelansim</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="column is-footered">
+                    <div>
+                        <h4 class="title is-4 has-text-white">Contacts</h4>
+                        <ul>
+                            <li>
+                                <b-tooltip label="@oceean_dev"
+                                    position="is-right"
+                                    type="is-dark">
+                                    <a href="tg://resolve?domain=oceean_dev" class="has-text-grey">Telegram</a>
+                                </b-tooltip>
+                            </li>
+                            <li><a class="has-text-grey" href="mailto:billionspoint@gmail.com">Email</a></li>
+                            <li><a class="has-text-grey" href="tel:+79771326478">Telephone</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="column is-footered">
+                    <div>
+                        <ul>
+                            <li class="has-text-white"><b>Copyright</b></li>
+                            <li class="has-text-white"><b>Nikolay Oceean</b></li>
+                            <li class="has-text-white"><b>Since 2019</b></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </footer>
     </main>
 
     <script type="text/javascript" src="https://unpkg.com/vue"></script>
-    <script type="text/javascript" src="https://unpkg.com/buefy/dist/components/tooltip"></script>
+    <script type="text/javascript" src="https://unpkg.com/buefy/dist/buefy.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
 </body>
 </html>
