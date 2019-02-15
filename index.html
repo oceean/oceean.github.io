@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -14,6 +14,7 @@
     <meta name="theme-color" content="#000000">
     <link rel="manifest" href="/manifest.json">
     <link rel="shortcut icon" href="/icon.144.png">
+    <style>[v-cloak], [sr-only] {display: none}</style>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134443058-1"></script>
     <script>
@@ -29,15 +30,16 @@
 </head>
 <body>
 
-    <main id="app" class="has-background-black-bis">
-        <header @click="showLogo = !showLogo" class="with-padding is-sticky">
-            <figure v-cloak v-if="showLogo" class="image is-64x64">
-                <img src="/icon.svg" alt="">
-            </figure>
-            <h1 v-if="!showLogo" class="title is-1 is-clickable">Oceean</h1>
+    <main v-cloak id="app" class="has-background-black-bis">
+        <header class="with-padding is-sticky">
+            <h1 class="title is-1 is-clickable">Oceean</h1>
         </header>
+        <nav class="container" style="margin-top: 2rem">
+            <a @click="applyLang('ru')" class="button is-small is-rounded is-dark">ru</a>
+            <a @click="applyLang('en')" class="button is-small is-rounded is-dark">en</a>
+        </nav>
         <section class="container with-boxes">
-            <div v-cloak class="columns">
+            <div class="columns is-variable is-5">
                 <div class="column" :class="'is-'+column.size" v-for="column, columnTitle in columns">
                     <div :class="'is-'+column.size+'-loader'">
                         <article class="box has-loader" :class="'has-background-'+column.color" v-if="loading[columnTitle]">

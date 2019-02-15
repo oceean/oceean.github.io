@@ -9,11 +9,12 @@ function getLink(link, callback, errorcallback) {
     linker.onerror = errorcallback || (()=>{});
     linker.send();
 }
+let glang = localStorage.getItem("lang")||"en";
 
 let app = new Vue({
     el: '#app',
     data: {
-        showLogo: false,
+        lang: glang,
         columns: {
             articles: {
                 size: 5,
@@ -38,6 +39,14 @@ let app = new Vue({
         },
     },
     methods: {
+        applyLang: function(lang) {
+            localStorage.setItem("lang", lang);
+            glang = lang;
+            this.lang = lang;
+            ajax('articles', lang);
+            ajax('abouts', lang);
+            ajax('projects', lang);
+        },
         GSend: function (sendargs) {
             if ("ga" in window) {
                 tracker = ga.getAll()[0];
@@ -55,17 +64,19 @@ let app = new Vue({
     }
 })
 
-function ajax(what) {
-    getLink(`/data/${what}.json`, (data)=>{
+function ajax(what, lang) {
+    app.loading[what] = true;
+    app.columns[what].data = [];
+    getLink(`/data/${lang}.${what}.json`, (data)=>{
         setTimeout(()=>{
             app.loading[what] = false;
             app.columns[what].data = JSON.parse(data);
-        }, 300)
+        }, 1000)
     })
 }
-ajax("articles");
-ajax("abouts");
-ajax("projects");
+if (glang!='hz') {
+    app.applyLang(glang);
+}
 
 let h = window.document.getElementsByTagName("header")[0];
 let i = 0;

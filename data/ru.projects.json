@@ -1,0 +1,24 @@
+[
+    {
+        "name": "Thick Marker",
+        "cost": 0,
+        "desc": "",
+        "run": "https://thickmarker.oceean.store",
+        "get": "https://github.com/oceean/ThickMarker",
+        "stats": {
+            "run": ["ProjectView", "run: ThickMarker"],
+            "get": ["ProjectView", "get: ThickMarker"]
+        }
+    },
+    {
+        "name": "Sticker Columns",
+        "cost": 0,
+        "desc": "",
+        "run": "https://stickerscolumns.oceean.store",
+        "get": "https://github.com/oceean/StickersColumns",
+        "stats": {
+            "run": ["ProjectView", "run: StickersColumns"],
+            "get": ["ProjectView", "get: StickersColumns"]
+        }
+    }
+]
