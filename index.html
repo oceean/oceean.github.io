@@ -36,8 +36,8 @@
             </figure>
             <h1 v-if="!showLogo" class="title is-1 is-clickable">Oceean</h1>
         </header>
-        <section v-cloak class="container with-boxes">
-            <div class="columns">
+        <section class="container with-boxes">
+            <div v-cloak class="columns">
                 <div class="column" :class="'is-'+column.size" v-for="column, columnTitle in columns">
                     <div :class="'is-'+column.size+'-loader'">
                         <article class="box has-loader" :class="'has-background-'+column.color" v-if="loading[columnTitle]">

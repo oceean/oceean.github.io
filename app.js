@@ -58,8 +58,10 @@ let app = new Vue({
 
 function ajax(what) {
     getLink(`/data/${what}.json`, (data)=>{
-        app.loading[what] = false;
-        app.columns[what].data = JSON.parse(data);
+        setTimeout(()=>{
+            app.loading[what] = false;
+            app.columns[what].data = JSON.parse(data);
+        }, 300)
     })
 }
 ajax("articles");
