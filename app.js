@@ -1,16 +1,15 @@
-function GS(catg, action, text) {
-    return {
-        hitType: 'event',
-        eventCategory: catg,
-        eventAction: action,
-        eventLabel: text
+function GS(catg, action) {
+    if ("ga" in window) {
+        tracker = ga.getAll()[0];
+        if (tracker)
+            tracker.send("event", catg, action);
     }
 }
 
 function genGStatsAttn(text) {
     return {
-        run: GS("ProjectView", "test", text),
-        get: GS("ProjectView", "code", text)
+        run: ["ProjectView", "test: " + text],
+        get: ["ProjectView", "code: " + text]
     }
 }
 
@@ -34,7 +33,7 @@ let app = new Vue({
     },
     methods: {
         GSend: function (sendargs) {
-            ga('send', sendargs)
+            GS(sendargs[0], sendargs[1])
         }
     }
 })
