@@ -1,5 +1,16 @@
 [
     {
+        "name": "BotInSec",
+        "cost": 15,
+        "desc": "",
+        "run": "https://botinsec.oceean.store",
+        "get": "https://github.com/oceean/BotInSec",
+        "stats": {
+            "run": ["ProjectView", "run: BotInSec"],
+            "get": ["ProjectView", "get: BotInSec"]
+        }
+    },
+    {
         "name": "Thick Marker",
         "cost": 0,
         "desc": "",
