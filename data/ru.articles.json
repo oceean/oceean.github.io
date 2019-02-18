@@ -1,10 +1,10 @@
 [
     {
         "name": "Разработка",
-        "desc": "Практикую программирование с 2012, код с 2014 года. Начал с робототехники NXT. Позже делал PWA на чистом JS. Писал игры на Love2D, Lua, полтора года. С 2016 в колледже начал изучать python. С 2016 работал в команде фрилансеров, VueJS и Firebase. 2017-2018 самостоятельно спроектировал и выпустил CMS для администрирования низкоуровнего софта ОС Linux (iptables, контейнеры Docker и тд) и продал предприятию. Стек приложения: Flask, VueJS, Postgres, Docker. Сейчас смотрю на крупные серьезные проекты."
+        "desc": "Практикую программирование с 2012, код с 2014 года. Начал с робототехники NXT. Позже делал PWA на чистом JS. Писал игры на Love2D, Lua, полтора года. С 2016 в колледже начал изучать python. С 2016 работал в команде фрилансеров, VueJS и Firebase. 2017-2018 самостоятельно спроектировал и выпустил CMS для администрирования низкоуровнего софта ОС Linux (ssh, iptables, контейнеры Docker и тд) и продал предприятию. Стек приложения: Flask, VueJS, Postgres, Docker. Сейчас смотрю на крупные серьезные проекты."
     },
     {
         "name": "Инструменты",
-        "desc": "Python3: Tornado, Flask, Google-API-client; JavaScript: Vue.js, p5.js, paper.js, Sass: Bootstrap, Bulma, UIKit; Docker; Node.js: WebPack, Gulp; Restfull; PowerShell; BASH; Godot; Lua: Love2d;"
+        "desc": "Python3: Tornado, Flask, Telegram, Pyrogram, Google-API-client; JavaScript: Vue.js, p5.js, paper.js, Sass: Bootstrap, Bulma, UIKit; Docker; Node.js: WebPack, Gulp; Restfull ; PowerShell; BASH; Godot; Lua: Love2d;"
     }
 ]

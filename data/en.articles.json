@@ -1,10 +1,10 @@
 [
     {
         "name": "Development",
-        "desc": "Practicing programming since 2012, code from 2014. Started with NXT robotics. Later I made web applications on pure JS. I wrote games on Love2D, Lua, a year and a half. From 2016 I started learning python in college. Since 2016 I have been working in a team of freelancers, projects on VueJS and Firebase. 2017-2018 independently designed and released a CMS for administering low-level Linux OS software (iptables, Docker containers, etc.) and sold it to the enterprise. Application stack: Flask, VueJS, Postgres, Docker. Now I look at major serious projects."
+        "desc": "Practicing programming since 2012, code from 2014. Started with NXT robotics. Later I made web applications on pure JS. I wrote games on Love2D, Lua, a year and a half. From 2016 I started learning python in college. Since 2016 I have been working in a team of freelancers, projects on VueJS and Firebase. 2017-2018 independently designed and released a CMS for administering low-level Linux OS software (ssh, iptables, Docker containers, etc.) and sold it to the enterprise. Application stack: Flask, VueJS, Postgres, Docker. Now I look at major serious projects."
     },
     {
-        "name": "Tools",
-        "desc": "Python3: Tornado, Flask, Google-API-client; JavaScript: Vue.js, p5.js, paper.js, Sass: Bootstrap, Bulma, UIKit; Docker; Node.js: WebPack, Gulp; Restfull ; PowerShell; BASH; Godot; Lua: Love2d; "
+        "name": "Tools",
+        "desc": "Python3: Tornado, Flask, Telegram, Pyrogram, Google-API-client; JavaScript: Vue.js, p5.js, paper.js, Sass: Bootstrap, Bulma, UIKit; Docker; Node.js: WebPack, Gulp; Restfull ; PowerShell; BASH; Godot; Lua: Love2d;"
     }
 ]

@@ -41,7 +41,7 @@
             <a @click="applyLang('ru')" class="button is-small is-rounded is-dark">Russian</a>
         </nav>
         <section class="container with-boxes">
-            <div class="columns is-variable is-5">
+            <div class="columns">
                 <div :id="columnTitle" class="column" :class="'is-'+column.size" v-for="column, columnTitle in columns">
                     <div :class="'is-'+column.size+'-loader'">
                         <article class="box has-loader" :class="'has-background-'+column.color" v-if="loading[columnTitle]" v-for="i in [1,2,3]">
@@ -54,8 +54,11 @@
                             <b-loading :is-full-page="false" :active.sync="loading[columnTitle]" :can-cancel="false"></b-loading>
                         </article>
                     </div>
-                    <article class="box is-1-loader" :class="'has-background-'+column.color" v-for="columnData in column.data">
-                        <h2 class="title is-3 has-text-white">{{columnData.name}}</h2>
+                    <article :class="'has-background-'+column.color+' box is-1-loader'"
+                            :style="columnData.video ? 'padding-left:0;padding-right:0':''"
+                            v-for="columnData in column.data">
+                        <iframe v-if="columnData.video" width="560" height="315" :src="`https://www.youtube.com/embed/${columnData.video}`" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <h2 v-if="columnData.name" class="title is-3 has-text-white" :style="columnData.video ? 'margin:.75rem':''">{{columnData.name}}</h2>
                         <p v-if="columnData.desc" class="has-text-white is-justify">{{columnData.desc}}</p>
                         <br v-if="columnData.desc">
                         <div v-if="columnData.run && columnData.get" class="level">
@@ -91,8 +94,8 @@
                     <div>
                         <h4 class="title is-4 has-text-white">Freelance</h4>
                         <ul>
-                            <li><a class="has-text-grey" href="">Upwork</a></li>
-                            <li><a class="has-text-grey" href="">Freelansim</a></li>
+                            <!-- <li><a class="has-text-grey" href="">Upwork</a></li> -->
+                            <li><a class="has-text-grey" href="https://freelansim.ru/freelancers/nikolay-kiselev">Freelansim</a></li>
                         </ul>
                     </div>
                 </div>
