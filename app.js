@@ -10,6 +10,11 @@ function getLink(link, callback, errorcallback) {
     linker.send();
 }
 let glang = localStorage.getItem("lang")||"en";
+let webargs = window.location.href.split("?");
+if (['ru', 'en'].includes(webargs[1])) {
+    glang = webargs[1];
+    window.location.href = webargs[0];
+}
 
 let app = new Vue({
     el: '#app',
@@ -68,13 +73,11 @@ function ajax(what, lang) {
     app.loading[what] = true;
     app.columns[what].data = [];
     getLink(`/data/${lang}.${what}.json`, (data)=>{
-        setTimeout(()=>{
-            app.loading[what] = false;
-            app.columns[what].data = JSON.parse(data);
-        }, 1000)
+        app.loading[what] = false;
+        app.columns[what].data = JSON.parse(data);
     })
 }
-if (glang!='hz') {
+if (glang) {
     app.applyLang(glang);
 }
 

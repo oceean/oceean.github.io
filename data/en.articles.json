@@ -1,1 +1,14 @@
-[]
+[
+    {
+        "name": "Development",
+        "desc": "yes"
+    },
+    {
+        "name": "Design",
+        "desc": "yes"
+    },
+    {
+        "name": "Develop tools",
+        "desc": "yes"
+    }
+]

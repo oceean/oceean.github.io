@@ -2,7 +2,7 @@
     {
         "name": "Bot In Sec",
         "cost": 15,
-        "desc": "",
+        "desc": "Powerful tool for programming telegram bots. Support send messages with interval or scheduled. Creating bots commands. And of course the automation of the native answers. With botinsec, you can create a bot even with minimal Python experience.",
         "run": "https://botinsec.oceean.store",
         "get": "https://github.com/oceean/BotInSec",
         "stats": {
@@ -13,7 +13,7 @@
     {
         "name": "Thick Marker",
         "cost": 0,
-        "desc": "",
+        "desc": "Application for cross-platform drawing from the browser. The peculiarity is that it makes the lines smoother and more natural.",
         "run": "https://thickmarker.oceean.store",
         "get": "https://github.com/oceean/ThickMarker",
         "stats": {
@@ -24,7 +24,7 @@
     {
         "name": "Sticker Columns",
         "cost": 0,
-        "desc": "",
+        "desc": "This is a sticker board. Here is a list of columns, and in the columns are stickers with your assignments. Just like in Trello.",
         "run": "https://stickerscolumns.oceean.store",
         "get": "https://github.com/oceean/StickersColumns",
         "stats": {

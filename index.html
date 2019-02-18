@@ -42,7 +42,7 @@
         </nav>
         <section class="container with-boxes">
             <div class="columns is-variable is-5">
-                <div class="column" :class="'is-'+column.size" v-for="column, columnTitle in columns">
+                <div :id="columnTitle" class="column" :class="'is-'+column.size" v-for="column, columnTitle in columns">
                     <div :class="'is-'+column.size+'-loader'">
                         <article class="box has-loader" :class="'has-background-'+column.color" v-if="loading[columnTitle]" v-for="i in [1,2,3]">
                             <h2 class="title is-3 has-text-white">
@@ -54,14 +54,17 @@
                             <b-loading :is-full-page="false" :active.sync="loading[columnTitle]" :can-cancel="false"></b-loading>
                         </article>
                     </div>
-                    <article class="box" :class="'has-background-'+column.color" v-for="columnData in column.data">
+                    <article class="box is-1-loader" :class="'has-background-'+column.color" v-for="columnData in column.data">
                         <h2 class="title is-3 has-text-white">{{columnData.name}}</h2>
-                        <p v-if="columnData.desc" class="has-text-white">{{columnData.desc}}</p>
+                        <p v-if="columnData.desc" class="has-text-white is-justify">{{columnData.desc}}</p>
                         <br v-if="columnData.desc">
                         <div v-if="columnData.run && columnData.get" class="level">
                             <div class="level-left">
                                 <div class="level-item">
-                                    <a @click="GSend(columnData.stats.run)" :href="columnData.run" class="button is-small is-rounded is-light is-outlined">{{columnData.cost>0 ? `Buy ${columnData.cost}$` : 'Launch'}}</a>
+                                    <a @click="GSend(columnData.stats.run)" :href="columnData.run" class="button is-small is-rounded is-light is-outlined">{{columnData.cost>0 ? `View` : 'Launch'}}</a>
+                                </div>
+                                <div v-if="columnData.cost" class="level-item">
+                                    <a @click="GSend(columnData.stats.run)" :href="columnData.run" class="button is-small is-rounded is-light is-outlined">{{`Buy ${columnData.cost}$`}}</a>
                                 </div>
                             </div>
                             <div class="level-right">

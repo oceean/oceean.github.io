@@ -2,7 +2,7 @@
     {
         "name": "Bot In Sec",
         "cost": 15,
-        "desc": "",
+        "desc": "Мощный инструмент для программирования телеграм ботов. Поддержка сообщений с интервалом и по расписанию. И разумеется автоматизация ответов. С botinsec можно создать бота даже с минимальным опытом Python.",
         "run": "https://botinsec.oceean.store",
         "get": "https://github.com/oceean/BotInSec",
         "stats": {
@@ -13,7 +13,7 @@
     {
         "name": "Thick Marker",
         "cost": 0,
-        "desc": "",
+        "desc": "Приложение для кроссплатформенного рисования из браузера. Особенность в том, что делает линии более ровными и натуральными.",
         "run": "https://thickmarker.oceean.store",
         "get": "https://github.com/oceean/ThickMarker",
         "stats": {
@@ -24,7 +24,7 @@
     {
         "name": "Sticker Columns",
         "cost": 0,
-        "desc": "",
+        "desc": "Это доска стикеров. Здесь находится список колонок, а в колонках стикеры с вашими заданиями. Все в духе Trello.",
         "run": "https://stickerscolumns.oceean.store",
         "get": "https://github.com/oceean/StickersColumns",
         "stats": {
